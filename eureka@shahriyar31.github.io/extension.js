@@ -15,21 +15,24 @@ import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import * as PanelMenu from 'resource:///org/gnome/shell/ui/panelMenu.js';
 import {Extension, gettext as _} from 'resource:///org/gnome/shell/extensions/extension.js';
 
+import {Rates} from './providers/currency.js';
 import * as Gnome from './providers/gnome.js';
 import * as Sources from './providers/sources.js';
 import {palette, SYSTEM_ACCENTS} from './theme.js';
 
-const DEBOUNCE_MS = 80;
+// apps, maths and conversions answer on every keystroke; files and providers wait until typing pauses
+const ASYNC_DELAY_MS = 120;
 const ANIMATION_MS = 160;
-const SECTION_ORDER = ['suggested', 'calculator', 'converter', 'system', 'apps', 'windows', 'provider', 'web', 'files',
-    'store', 'fallback'];
+const SECTION_ORDER = ['suggested', 'calculator', 'converter', 'currency', 'system', 'apps', 'windows', 'folders',
+    'provider', 'web', 'files', 'store', 'fallback'];
 
 function sectionTitle(r) {
     if (r.section === 'provider' || r.section === 'store')
         return r.provider;
     return {
         suggested: _('Suggested'), calculator: _('Calculator'), converter: _('Converter'), system: _('System'),
-        apps: _('Applications'), windows: _('Open Windows'), web: _('Web'), files: _('Files'),
+        apps: _('Applications'), windows: _('Open Windows'), web: _('Web'), files: _('Files'), folders: _('Folders'),
+        currency: _('Currency'),
         fallback: _('Search the Web'),
     }[r.section] ?? r.section;
 }
@@ -52,7 +55,7 @@ class EurekaPanel {
         this._results = [];
         this._selected = 0;
         this._query = '';
-        this._debounceId = 0;
+        this._asyncId = 0;
         this._cancellable = null;
         this._fading = new Set();   // closed panels still fading out
         this._idles = new Set();
@@ -107,6 +110,13 @@ class EurekaPanel {
         const font = safeFont(s.get_string('font-family'));
         this._compact = compact;
         this._providers = s.get_boolean('show-providers') ? Gnome.enabledProviders() : [];
+        if (s.get_boolean('show-currency')) {   // opt-in: refresh the public ECB rates, never sends the query
+            this._rates ??= new Rates();
+            this._rates.refresh(() => {   // first rates arrived while typing: show the conversion now
+                if (this.isOpen && this._query)
+                    this._search(this._query);
+            });
+        }
 
         const dim = s.get_int('backdrop-dim') / 100;
         this._backdrop = new St.Widget({reactive: true, x: m.x, y: m.y, width: m.width, height: m.height,
@@ -171,7 +181,7 @@ class EurekaPanel {
         this._box.connect('notify::width', () => this._place(m));
         this._place(m);
 
-        this._entry.clutter_text.connect('text-changed', () => this._queueSearch());
+        this._entry.clutter_text.connect('text-changed', () => this._search(this._entry.get_text().trim()));
         // keys are caught on their way in, before the text field: Esc, arrows and Enter work wherever the focus is
         this._backdrop.connect('captured-event', (actor, event) =>
             (event.type() === Clutter.EventType.KEY_PRESS ? this._onKey(event) : Clutter.EVENT_PROPAGATE));
@@ -223,9 +233,9 @@ class EurekaPanel {
     close() {
         if (!this.isOpen)
             return;
-        if (this._debounceId)
-            GLib.source_remove(this._debounceId);
-        this._debounceId = 0;
+        if (this._asyncId)
+            GLib.source_remove(this._asyncId);
+        this._asyncId = 0;
         this._cancellable?.cancel();
         this._cancellable = null;
         if (this._grab)
@@ -284,22 +294,14 @@ class EurekaPanel {
     }
 
     // ---------- search ----------
-    _queueSearch() {
-        if (this._debounceId)
-            GLib.source_remove(this._debounceId);
-        this._debounceId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, DEBOUNCE_MS, () => {
-            this._debounceId = 0;
-            if (this._entry)
-                this._search(this._entry.get_text().trim());
-            return GLib.SOURCE_REMOVE;
-        });
-    }
-
     _search(q) {
         this._query = q;
         this._selected = 0;
         this._cancellable?.cancel();
         this._cancellable = new Gio.Cancellable();
+        if (this._asyncId)
+            GLib.source_remove(this._asyncId);
+        this._asyncId = 0;
         const s = this._settings;
         if (!q) {
             this._results = s.get_boolean('show-suggestions') ? this._suggestions() : [];
@@ -313,6 +315,7 @@ class EurekaPanel {
         const fixed = prefixed ? tag(web, 'web') : [
             ...(s.get_boolean('show-calculator') ? tag(Sources.calculator(q), 'calculator') : []),
             ...(s.get_boolean('show-converter') ? tag(Sources.converter(q), 'converter') : []),
+            ...(s.get_boolean('show-currency') ? tag(this._currency(q), 'currency') : []),
             ...(s.get_boolean('show-system') ? tag(Sources.system(q), 'system') : []),
             ...(s.get_boolean('show-apps') ? tag(Sources.apps(q, s.get_int('apps-limit')), 'apps') : []),
             ...(s.get_boolean('show-windows') ? tag(Sources.windows(q), 'windows') : []),
@@ -325,20 +328,34 @@ class EurekaPanel {
             if (q === this._query && this.isOpen)
                 this._setResults([...fixed, ...provided.filter(r => !shown.has(r.title.toLowerCase())), ...files]);
         };
-        update();
+        update();   // instant part: Enter always acts on what is typed now
         if (prefixed)
             return;
-        if (s.get_boolean('show-files'))
-            Sources.files(q, this._cancellable, r => {
-                files = tag(r, 'files');
-                update();
-            }, s.get_int('files-limit'));
-        if (fixed.some(r => r.section === 'calculator' || r.section === 'converter'))
-            return;   // a sum or a conversion is the answer; provider noise would bury it
-        Gnome.search(this._providers, q.split(/\s+/).filter(Boolean), this._cancellable, (p, r) => {
-            provided = [...provided, ...tag(r, p.store ? 'store' : 'provider').map(x => ({...x, provider: x.provider}))];
-            update();
+        const cancellable = this._cancellable;
+        const answered = fixed.some(r => ['calculator', 'converter', 'currency'].includes(r.section));
+        this._asyncId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, ASYNC_DELAY_MS, () => {
+            this._asyncId = 0;
+            if (s.get_boolean('show-files'))
+                Sources.files(q, cancellable, r => {
+                    files = r.map(f => ({...f, section: f.section === 'Folders' ? 'folders' : 'files'}));
+                    update();
+                }, s.get_int('files-limit'));
+            if (!answered)   // a sum or a conversion is the answer; provider noise would bury it
+                Gnome.search(this._providers, q.split(/\s+/).filter(Boolean), cancellable, (p, r) => {
+                    provided = [...provided, ...tag(r, p.store ? 'store' : 'provider')];
+                    update();
+                });
+            return GLib.SOURCE_REMOVE;
         });
+    }
+
+    _currency(q) {
+        const r = this._rates?.convert(q);
+        if (!r)
+            return [];
+        return [{title: r.text, subtitle: _('European Central Bank rate of %s · Enter copies %s').format(r.date, r.value),
+            iconName: 'accessories-calculator-symbolic',
+            activate: () => St.Clipboard.get_default().set_text(St.ClipboardType.CLIPBOARD, r.value)}];
     }
 
     _suggestions() {
@@ -515,6 +532,8 @@ class EurekaPanel {
         this._timers.clear();
         this._fading.forEach(a => a.destroy());
         this._fading.clear();
+        this._rates?.destroy();
+        this._rates = null;
         this._interface = null;
     }
 }

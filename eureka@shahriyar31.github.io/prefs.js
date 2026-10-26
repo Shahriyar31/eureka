@@ -324,6 +324,9 @@ export default class EurekaPreferences extends ExtensionPreferences {
             _('Characters (emoji), Settings, Clocks, Software, Contacts… as chosen in Settings → Search')));
         sources.add(toggle(settings, 'show-calculator', _('Calculator'), _('12*(3+4), sqrt(2), 2^10, pi')));
         sources.add(toggle(settings, 'show-converter', _('Unit converter'), _('10 km to mi, 100 f to c, 2 gb to mb (offline)')));
+        sources.add(toggle(settings, 'show-currency', _('Currency converter'),
+            _('100 usd to eur, 50€ in inr. Downloads the European Central Bank’s public rates (2 KB) at most twice a day; ' +
+              'what you type never leaves your computer.')));
         sources.add(toggle(settings, 'show-system', _('System actions'), _('Lock, suspend, log out, restart, power off')));
         sources.add(toggle(settings, 'show-web', _('Web search'), _('Prefixes and a fallback row')));
         behave.add(sources);
@@ -343,12 +346,22 @@ export default class EurekaPreferences extends ExtensionPreferences {
         // ---------- About ----------
         const about = new Adw.PreferencesPage({title: _('About'), icon_name: 'help-about-symbolic'});
         const info = new Adw.PreferencesGroup({title: 'Eureka',
-            description: _('Spotlight-style search for GNOME. Your searches stay on this computer: Eureka does not use the network, does not log what you type, and never runs programs or scripts it finds.')});
+            description: _('Spotlight-style search for GNOME. Your searches stay on this computer: Eureka does not log what you type, never runs programs or scripts it finds, and only uses the network if you turn on the currency converter.')});
         const link = new Adw.ActionRow({title: _('Source code and issues'), subtitle: this.metadata.url ?? '',
             activatable: true});
         link.add_suffix(new Gtk.Image({icon_name: 'adw-external-link-symbolic'}));
         link.connect('activated', () => Gtk.show_uri(window, this.metadata.url, Gdk.CURRENT_TIME));
         info.add(link);
+        const coffee = this.metadata.donations?.buymeacoffee;
+        if (coffee) {
+            const support = new Adw.ActionRow({title: _('Support Eureka'),
+                subtitle: _('Eureka is free and stays free. If it saves you time, you can buy the developer a coffee.'),
+                activatable: true});
+            support.add_prefix(new Gtk.Image({icon_name: 'emblem-favorite-symbolic'}));
+            support.add_suffix(new Gtk.Image({icon_name: 'adw-external-link-symbolic'}));
+            support.connect('activated', () => Gtk.show_uri(window, `https://buymeacoffee.com/${coffee}`, Gdk.CURRENT_TIME));
+            info.add(support);
+        }
         const reset = new Adw.ActionRow({title: _('Reset all settings'), subtitle: _('Back to the defaults')});
         const resetButton = new Gtk.Button({label: _('Reset'), valign: Gtk.Align.CENTER, css_classes: ['destructive-action']});
         resetButton.connect('clicked', () => settings.settings_schema.list_keys().forEach(k => settings.reset(k)));

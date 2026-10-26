@@ -8,7 +8,8 @@
 <p align="center">
   <img alt="GNOME 50" src="https://img.shields.io/badge/GNOME-50-4A86CF?logo=gnome&logoColor=white">
   <img alt="Licence GPL-2.0-or-later" src="https://img.shields.io/badge/licence-GPL--2.0--or--later-blue">
-  <img alt="No network access" src="https://img.shields.io/badge/network-none-2ea44f">
+  <img alt="No tracking" src="https://img.shields.io/badge/tracking-none-2ea44f">
+  <a href="https://buymeacoffee.com/shahriyarfarhan"><img alt="Buy me a coffee" src="https://img.shields.io/badge/buy%20me%20a-coffee-FFDD00?logo=buymeacoffee&logoColor=black"></a>
 </p>
 
 <p align="center">
@@ -16,8 +17,8 @@
 </p>
 
 *Eureka!* is Greek for "I found it!", what Archimedes shouted in his bath. That is the moment this extension is for:
-one box that finds your apps, windows, files, emoji and settings, does quick maths and conversions, and searches the
-web, with a Material You look that follows your accent colour.
+one box that finds your apps, windows, files, folders, emoji and settings, does quick maths and unit or currency
+conversions, and searches the web, with a Material You look that follows your accent colour.
 
 ## Install
 
@@ -51,9 +52,11 @@ gnome-extensions enable eureka@shahriyar31.github.io
 | `firefox`, `terminal` | applications | opens the app |
 | part of a window title | open windows | switches to that window |
 | `thesis`, a word inside a PDF | files (GNOME's file index) | opens the file |
+| `semester`, `downloads` | folders, the one you used most recently first | opens it in Files |
 | `smile`, `wifi`, `tokyo` | emoji, Settings pages, clocks, contacts, software… | the same results as GNOME's Activities search |
 | `12*(3+4)/2`, `sqrt(2)`, `2^10` | calculator | copies the result |
 | `10 km to mi`, `100 f to c`, `2 gib to mb` | unit converter (offline) | copies the result |
+| `100 usd to eur`, `50€ in inr`, `20 pounds to dollars` | currency converter (turn it on in settings) | copies the result |
 | `lock`, `suspend`, `restart`, `power off` | system actions | runs it (restart and power off ask first) |
 | `yt lofi`, `w quantum`, `gh eureka` | YouTube, Wikipedia, GitHub… | opens the search in your browser |
 
@@ -92,6 +95,8 @@ Open **Extension Manager → Eureka → Settings** (or `gnome-extensions prefs e
 - **Text.** Any installed font, text size, section headings, second lines, keyboard hints.
 - **Depth.** Panel opacity, frosted blur (GNOME's own blur, nothing extra to install), outline, screen dimming.
 - **Motion.** Animations on or off and their speed. GNOME's *Reduce animation* setting is respected.
+- **Currency converter.** Off until you turn it on. Uses the European Central Bank's daily reference rates for
+  about 30 currencies (see *Privacy* below).
 - **Behaviour.** An optional search icon in the top bar, which screen it opens on, which kinds of results to show
   and how many.
 - **Web engines.** Add or remove engines and choose the fallback. Defaults: Google `g`, DuckDuckGo `d`,
@@ -101,7 +106,9 @@ Open **Extension Manager → Eureka → Settings** (or `gnome-extensions prefs e
 
 ## Privacy and security
 
-- **No network access.** Eureka contains no networking code. Only the web row opens your browser, when you choose it.
+- **No network unless you ask for it.** The only download is the currency converter, which is off by default. When
+  on, it fetches the European Central Bank's public rates file (2 KB) at most twice a day. What you type is never
+  sent anywhere: the conversion happens on your computer. The web row opens your browser only when you choose it.
 - **Nothing is logged or stored.** What you type is never written to disk or to the system log.
 - **Never runs what it finds.** Programs, scripts and launchers found in file search open in Files, never start.
 - **No shell commands.** Eureka starts only GNOME's file-index search and GNOME's log-out dialog, with fixed arguments.
@@ -148,9 +155,17 @@ gnome-extensions uninstall eureka@shahriyar31.github.io
 | Unit converter | ✓ offline | ✓ | – |
 | Blur without extra packages | ✓ | needs ImageMagick | – |
 | Colours derived from your accent (Material You) | ✓ | – | – |
-| Currency converter | – (would need the internet) | ✓ | – |
+| Currency converter | ✓ opt-in, searches never sent | ✓ | – |
+| Folders, most recently used first | ✓ | – | – |
 
 *Compared on 26 October 2026 from each project's own page.*
+
+## Support
+
+Eureka is free and will stay free, with no ads and no tracking. If it saves you time, you can
+[buy me a coffee](https://buymeacoffee.com/shahriyarfarhan). It is also the link behind the **Donate** row in
+Extension Manager and the **Sponsor** button on GitHub. A star on GitHub or a good rating on extensions.gnome.org
+helps other people find it, which is just as welcome.
 
 ## Contributing
 
@@ -161,7 +176,7 @@ For code changes:
 
 ```bash
 make lint            # ESLint
-dev/smoke-test.sh    # must pass: real key presses and clicks in an isolated GNOME session
+make test            # unit tests, file search on this computer, then real key presses and clicks in an isolated GNOME
 make pack            # the zip for extensions.gnome.org
 ```
 

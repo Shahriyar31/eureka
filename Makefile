@@ -2,7 +2,7 @@ UUID := eureka@shahriyar31.github.io
 SRC  := $(UUID)
 ZIP  := $(UUID).shell-extension.zip
 
-.PHONY: all schemas pack install uninstall lint pot clean
+.PHONY: all schemas pack install uninstall lint pot clean test
 
 all: pack
 
@@ -23,6 +23,12 @@ install: pack
 
 uninstall:
 	gnome-extensions uninstall $(UUID)
+
+# unit tests (maths, units, currency), file search against this computer's index, then real input in an isolated GNOME
+test: schemas
+	gjs -m dev/test-unit.mjs
+	gjs -m dev/test-files.mjs
+	dev/smoke-test.sh
 
 lint:
 	npx --yes eslint@9 .

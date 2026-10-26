@@ -14,3 +14,5 @@ jobs:
         run: npm install --no-save eslint@9 @eslint/js@9 && npx eslint .
       - name: Validate settings schema
         run: sudo apt-get update && sudo apt-get install -y libglib2.0-bin && glib-compile-schemas --strict --dry-run eureka@shahriyar31.github.io/schemas
+      - name: Unit tests (calculator, units, currency parsing)
+        run: sudo apt-get install -y gjs gir1.2-soup-3.0 && gjs -m dev/test-unit.mjs

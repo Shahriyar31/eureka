@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.0 (2026-10-27)
+
+- Folders in results, the one you used most recently first; they open in Files.
+- Currency converter (opt-in) with the European Central Bank's daily rates; searches are never sent.
+- Faster typing: apps, maths and conversions update on every keystroke, and Enter always acts on the current text.
+- Support link in the settings and a Donate entry for Extension Manager.
+- File search moved into its own module with unit tests; `make test` runs unit tests, file search tests and the
+  real-input checklist.
+
 ## 1.0.0 (2026-10-26)
 
 - First release for GNOME Shell 50.

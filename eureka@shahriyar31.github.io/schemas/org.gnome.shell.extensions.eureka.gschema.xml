@@ -30,6 +30,7 @@
     <key name="show-web" type="b"><default>true</default><summary>Offer a web search</summary></key>
     <key name="show-providers" type="b"><default>true</default><summary>Results from GNOME search providers (Settings → Search)</summary></key>
     <key name="show-converter" type="b"><default>true</default><summary>Convert units (10 km to mi)</summary></key>
+    <key name="show-currency" type="b"><default>false</default><summary>Convert currencies with the ECB's daily rates (downloads the public rates file, never the query)</summary></key>
     <key name="show-suggestions" type="b"><default>true</default><summary>Suggest frequently used apps before typing</summary></key>
     <key name="show-panel-icon" type="b"><default>false</default><summary>Show a search icon in the top bar</summary></key>
     <key name="apps-limit" type="i"><range min="1" max="10"/><default>5</default><summary>Applications shown</summary></key>
