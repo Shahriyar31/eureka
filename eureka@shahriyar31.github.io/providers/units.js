@@ -47,7 +47,7 @@ function format(v) {
 
 /** Returns {text, value} for a conversion query, or null. */
 export function convert(query) {
-    const m = query.trim().match(/^(-?\d+(?:[.,]\d+)?)\s*([a-z°²³/]+)\s+(?:to|in|as|=)\s+([a-z°²³/]+)$/i);
+    const m = query.trim().match(/^(-?\d+(?:[.,]\d+)?)\s*([a-z°²³\/]+)\s+(?:to|in|as|=)\s+([a-z°²³\/]+)$/i);
     if (!m)
         return null;
     const value = parseFloat(m[1].replace(',', '.'));

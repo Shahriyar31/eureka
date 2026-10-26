@@ -10,7 +10,7 @@ const CONSTANTS = {pi: Math.PI, e: Math.E};
 
 function tokenize(text) {
     const tokens = [];
-    const re = /\s*(\d+(?:[.,]\d+)?(?:e[+-]?\d+)?|[a-z]+|\*\*|[-+*/%^()×÷])/giy;
+    const re = /\s*(\d+(?:[.,]\d+)?(?:e[+-]?\d+)?|[a-z]+|\*\*|[-+*\/%^()×÷])/giy;
     let m;
     while (re.lastIndex < text.length) {
         m = re.exec(text);
@@ -96,7 +96,7 @@ function parse(tokens) {
 /** Returns the result as text, or null when the query is not a calculation. */
 export function calculate(query) {
     const text = query.replace(/^=\s*/, '').trim();
-    if (!/\d/.test(text) || !/[-+*/%^()×÷]|[a-z]\(/i.test(text))
+    if (!/\d/.test(text) || !/[-+*\/%^()×÷]|[a-z]\(/i.test(text))
         return null;
     const tokens = tokenize(text);
     if (!tokens || !tokens.length)

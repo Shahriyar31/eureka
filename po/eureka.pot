@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eureka\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-26 18:20+0100\n"
+"POT-Creation-Date: 2026-10-27 00:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,560 +17,609 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: eureka@shahriyar31.github.io/extension.js:30
+#: eureka@shahriyar31.github.io/extension.js:33
 msgid "Suggested"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/extension.js:30
-#: eureka@shahriyar31.github.io/prefs.js:281
+#: eureka@shahriyar31.github.io/extension.js:33
+#: eureka@shahriyar31.github.io/prefs.js:325
 msgid "Calculator"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/extension.js:30
+#: eureka@shahriyar31.github.io/extension.js:33
 msgid "Converter"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/extension.js:30
+#: eureka@shahriyar31.github.io/extension.js:33
 msgid "System"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/extension.js:31
-#: eureka@shahriyar31.github.io/prefs.js:275
-#: eureka@shahriyar31.github.io/prefs.js:289
+#: eureka@shahriyar31.github.io/extension.js:34
+#: eureka@shahriyar31.github.io/prefs.js:319
+#: eureka@shahriyar31.github.io/prefs.js:336
 msgid "Applications"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/extension.js:31
+#: eureka@shahriyar31.github.io/extension.js:34
 msgid "Open Windows"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/extension.js:31
-#: eureka@shahriyar31.github.io/prefs.js:295
+#: eureka@shahriyar31.github.io/extension.js:34
+#: eureka@shahriyar31.github.io/prefs.js:342
 msgid "Web"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/extension.js:31
-#: eureka@shahriyar31.github.io/prefs.js:277
-#: eureka@shahriyar31.github.io/prefs.js:290
+#: eureka@shahriyar31.github.io/extension.js:34
+#: eureka@shahriyar31.github.io/prefs.js:321
+#: eureka@shahriyar31.github.io/prefs.js:337
 msgid "Files"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/extension.js:32
+#: eureka@shahriyar31.github.io/extension.js:34
+msgid "Folders"
+msgstr ""
+
+#: eureka@shahriyar31.github.io/extension.js:35
+msgid "Currency"
+msgstr ""
+
+#: eureka@shahriyar31.github.io/extension.js:36
 msgid "Search the Web"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/extension.js:134
+#: eureka@shahriyar31.github.io/extension.js:145
 msgid "Search apps, files, maths, web…"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/extension.js:353
+#: eureka@shahriyar31.github.io/extension.js:151
+msgid "Close"
+msgstr ""
+
+#: eureka@shahriyar31.github.io/extension.js:356
+#, javascript-format
+msgid "European Central Bank rate of %s · Enter copies %s"
+msgstr ""
+
+#: eureka@shahriyar31.github.io/extension.js:393
 msgid "No results"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/extension.js:418
+#: eureka@shahriyar31.github.io/extension.js:465
 msgid "move"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/extension.js:418
+#: eureka@shahriyar31.github.io/extension.js:465
 msgid "open"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/extension.js:418
+#: eureka@shahriyar31.github.io/extension.js:465
 msgid "quick open"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/extension.js:419
+#: eureka@shahriyar31.github.io/extension.js:466
 msgid "show in Files"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/extension.js:419
+#: eureka@shahriyar31.github.io/extension.js:466
 msgid "copy path"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/extension.js:419
+#: eureka@shahriyar31.github.io/extension.js:466
 msgid "close"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:40
+#: eureka@shahriyar31.github.io/prefs.js:42
 msgid "Set Shortcut"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:41
+#: eureka@shahriyar31.github.io/prefs.js:43
 msgid ""
 "Press the new key combination. Esc cancels, Backspace keeps the current one."
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:42
+#: eureka@shahriyar31.github.io/prefs.js:44
 msgid "Cancel"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:68
-msgid "Open Eureka"
+#: eureka@shahriyar31.github.io/prefs.js:72
+msgid "Shortcut"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:68
+#: eureka@shahriyar31.github.io/prefs.js:73
+msgid ""
+"Press it to open Eureka, press it again to close. Choose a ready-made "
+"shortcut or record your own."
+msgstr ""
+
+#: eureka@shahriyar31.github.io/prefs.js:76
+msgid "Custom…"
+msgstr ""
+
+#: eureka@shahriyar31.github.io/prefs.js:77
+msgid "Open and close Eureka"
+msgstr ""
+
+#: eureka@shahriyar31.github.io/prefs.js:111
 msgid "Second shortcut"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:69
-msgid "Click to change"
+#: eureka@shahriyar31.github.io/prefs.js:111
+msgid "Optional. Click to record"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:69
-msgid "Optional. Click to set"
-msgstr ""
-
-#: eureka@shahriyar31.github.io/prefs.js:71
+#: eureka@shahriyar31.github.io/prefs.js:114
 msgid "Not set"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:75
-#: eureka@shahriyar31.github.io/prefs.js:121
+#: eureka@shahriyar31.github.io/prefs.js:116
+#: eureka@shahriyar31.github.io/prefs.js:167
 msgid "Remove"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:94
-msgid "Super+Space is also the keyboard layout switcher"
+#: eureka@shahriyar31.github.io/prefs.js:130
+#, javascript-format
+msgid "%s is also used by GNOME"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:95
-msgid "Free it for Eureka; the layout switcher keeps its other keys."
+#: eureka@shahriyar31.github.io/prefs.js:131
+#, javascript-format
+msgid "“%s”. Free it so Eureka gets the key, or pick another shortcut."
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:97
-msgid "Free Super+Space"
+#: eureka@shahriyar31.github.io/prefs.js:133
+msgid "Free it"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:128
+#: eureka@shahriyar31.github.io/prefs.js:174
 msgid "Web Engines"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:129
+#: eureka@shahriyar31.github.io/prefs.js:175
 msgid ""
 "Type the prefix and a space to search an engine directly, e.g. “yt lofi”. "
 "Only https addresses are accepted."
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:141
+#: eureka@shahriyar31.github.io/prefs.js:187
 msgid "Add Engine"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:142
+#: eureka@shahriyar31.github.io/prefs.js:188
 msgid "Prefix (e.g. so)"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:143
+#: eureka@shahriyar31.github.io/prefs.js:189
 msgid "Name (e.g. Stack Overflow)"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:144
+#: eureka@shahriyar31.github.io/prefs.js:190
 #, javascript-format
 msgid "Address with %s for the words"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:145
+#: eureka@shahriyar31.github.io/prefs.js:191
 msgid "Add"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:154
+#: eureka@shahriyar31.github.io/prefs.js:200
 msgid "Prefix: 1–8 letters or digits."
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:156
+#: eureka@shahriyar31.github.io/prefs.js:202
 msgid "That prefix is already used."
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:158
+#: eureka@shahriyar31.github.io/prefs.js:204
 msgid "Name: up to 40 characters, no “|”."
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:160
+#: eureka@shahriyar31.github.io/prefs.js:206
 #, javascript-format
 msgid "Address must start with https:// and contain %s exactly once."
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:174
+#: eureka@shahriyar31.github.io/prefs.js:220
 msgid "Fallback engine"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:175
+#: eureka@shahriyar31.github.io/prefs.js:221
 msgid "Used for the “Search the Web” row"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:192
+#: eureka@shahriyar31.github.io/prefs.js:238
 msgid "Appearance"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:193
+#: eureka@shahriyar31.github.io/prefs.js:239
 msgid "Style"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:194
+#: eureka@shahriyar31.github.io/prefs.js:240
 msgid "Theme"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:194
+#: eureka@shahriyar31.github.io/prefs.js:240
 msgid "Follow the system or force light or dark"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:195
+#: eureka@shahriyar31.github.io/prefs.js:241
 msgid "Follow system"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:195
+#: eureka@shahriyar31.github.io/prefs.js:241
 msgid "Light"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:195
+#: eureka@shahriyar31.github.io/prefs.js:241
 msgid "Dark"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:196
+#: eureka@shahriyar31.github.io/prefs.js:242
 msgid "Accent colour"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:196
+#: eureka@shahriyar31.github.io/prefs.js:242
 msgid "The colour every tone is derived from"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:197
+#: eureka@shahriyar31.github.io/prefs.js:243
 msgid "System accent"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:197
-#: eureka@shahriyar31.github.io/prefs.js:198
+#: eureka@shahriyar31.github.io/prefs.js:243
+#: eureka@shahriyar31.github.io/prefs.js:244
 msgid "Custom colour"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:216
+#: eureka@shahriyar31.github.io/prefs.js:262
 msgid "Icons"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:216
+#: eureka@shahriyar31.github.io/prefs.js:262
 msgid "Tinted circles in the Material style, or plain"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:217
+#: eureka@shahriyar31.github.io/prefs.js:263
 msgid "Tonal circles"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:217
+#: eureka@shahriyar31.github.io/prefs.js:263
 msgid "Plain"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:218
+#: eureka@shahriyar31.github.io/prefs.js:264
 msgid "Animations"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:218
+#: eureka@shahriyar31.github.io/prefs.js:264
 msgid "Fade and scale when opening and closing"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:219
+#: eureka@shahriyar31.github.io/prefs.js:265
 msgid "Animation speed"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:219
+#: eureka@shahriyar31.github.io/prefs.js:265
 msgid "1.0 is normal; higher is faster"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:225
+#: eureka@shahriyar31.github.io/prefs.js:271
 msgid "Shape and Size"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:226
+#: eureka@shahriyar31.github.io/prefs.js:272
 msgid "Corner radius"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:226
+#: eureka@shahriyar31.github.io/prefs.js:272
 msgid "Pixels; 28 is the Material default"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:227
+#: eureka@shahriyar31.github.io/prefs.js:273
 msgid "Width"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:227
+#: eureka@shahriyar31.github.io/prefs.js:273
 msgid "Pixels"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:228
+#: eureka@shahriyar31.github.io/prefs.js:274
 msgid "Distance from top"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:228
+#: eureka@shahriyar31.github.io/prefs.js:274
 msgid "Percent of the screen height"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:229
+#: eureka@shahriyar31.github.io/prefs.js:275
 msgid "Density"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:229
+#: eureka@shahriyar31.github.io/prefs.js:275
 msgid "Comfortable"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:229
+#: eureka@shahriyar31.github.io/prefs.js:275
 msgid "Compact"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:232
+#: eureka@shahriyar31.github.io/prefs.js:278
 msgid "Text"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:233
+#: eureka@shahriyar31.github.io/prefs.js:279
 msgid "Font"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:233
+#: eureka@shahriyar31.github.io/prefs.js:279
 msgid "Leave empty for the system font"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:241
+#: eureka@shahriyar31.github.io/prefs.js:287
 msgid "Use the system font"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:246
+#: eureka@shahriyar31.github.io/prefs.js:292
 msgid "Text size"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:246
+#: eureka@shahriyar31.github.io/prefs.js:292
 msgid "1.0 is normal"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:247
+#: eureka@shahriyar31.github.io/prefs.js:293
 msgid "Section headings"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:248
+#: eureka@shahriyar31.github.io/prefs.js:294
 msgid "Second line under results"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:249
+#: eureka@shahriyar31.github.io/prefs.js:295
 msgid "Keyboard hints"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:252
+#: eureka@shahriyar31.github.io/prefs.js:298
 msgid "Transparency and Depth"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:253
+#: eureka@shahriyar31.github.io/prefs.js:299
 msgid "Panel opacity"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:253
+#: eureka@shahriyar31.github.io/prefs.js:299
 msgid "Percent; lower it to see the blur"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:254
+#: eureka@shahriyar31.github.io/prefs.js:300
 msgid "Blur behind the panel"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:254
+#: eureka@shahriyar31.github.io/prefs.js:300
 msgid "Frosted glass, using GNOME’s own blur"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:255
+#: eureka@shahriyar31.github.io/prefs.js:301
 msgid "Blur strength"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:258
+#: eureka@shahriyar31.github.io/prefs.js:304
 msgid "Dim the screen behind"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:258
+#: eureka@shahriyar31.github.io/prefs.js:304
 msgid "Percent"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:259
+#: eureka@shahriyar31.github.io/prefs.js:305
 msgid "Outline"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:259
+#: eureka@shahriyar31.github.io/prefs.js:305
 msgid "A thin line around the panel"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:264
+#: eureka@shahriyar31.github.io/prefs.js:310
 msgid "Behaviour"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:265
-msgid "Shortcut"
+#: eureka@shahriyar31.github.io/prefs.js:312
+msgid "Where"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:269
+#: eureka@shahriyar31.github.io/prefs.js:313
 msgid "Open on"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:269
+#: eureka@shahriyar31.github.io/prefs.js:313
 msgid "Which screen Eureka appears on"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:270
+#: eureka@shahriyar31.github.io/prefs.js:314
 msgid "Screen with the mouse pointer"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:270
+#: eureka@shahriyar31.github.io/prefs.js:314
 msgid "Primary screen"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:271
+#: eureka@shahriyar31.github.io/prefs.js:315
 msgid "Top bar icon"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:271
+#: eureka@shahriyar31.github.io/prefs.js:315
 msgid "Open Eureka with the mouse"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:274
+#: eureka@shahriyar31.github.io/prefs.js:318
 msgid "Search In"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:276
+#: eureka@shahriyar31.github.io/prefs.js:320
 msgid "Open windows"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:276
+#: eureka@shahriyar31.github.io/prefs.js:320
 msgid "Switch to a window by title or app"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:277
+#: eureka@shahriyar31.github.io/prefs.js:321
 msgid "Uses GNOME’s file index (Settings → Search)"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:278
+#: eureka@shahriyar31.github.io/prefs.js:322
 msgid "Suggestions"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:278
+#: eureka@shahriyar31.github.io/prefs.js:322
 msgid "Your most used apps, before you type"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:279
+#: eureka@shahriyar31.github.io/prefs.js:323
 msgid "GNOME search providers"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:280
+#: eureka@shahriyar31.github.io/prefs.js:324
 msgid ""
 "Characters (emoji), Settings, Clocks, Software, Contacts… as chosen in "
 "Settings → Search"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:281
+#: eureka@shahriyar31.github.io/prefs.js:325
 msgid "12*(3+4), sqrt(2), 2^10, pi"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:282
+#: eureka@shahriyar31.github.io/prefs.js:326
 msgid "Unit converter"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:282
+#: eureka@shahriyar31.github.io/prefs.js:326
 msgid "10 km to mi, 100 f to c, 2 gb to mb (offline)"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:283
+#: eureka@shahriyar31.github.io/prefs.js:327
+msgid "Currency converter"
+msgstr ""
+
+#: eureka@shahriyar31.github.io/prefs.js:328
+msgid ""
+"100 usd to eur, 50€ in inr. Downloads the European Central Bank’s public "
+"rates (2 KB) at most twice a day; what you type never leaves your computer."
+msgstr ""
+
+#: eureka@shahriyar31.github.io/prefs.js:330
 msgid "System actions"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:283
+#: eureka@shahriyar31.github.io/prefs.js:330
 msgid "Lock, suspend, log out, restart, power off"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:284
+#: eureka@shahriyar31.github.io/prefs.js:331
 msgid "Web search"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:284
+#: eureka@shahriyar31.github.io/prefs.js:331
 msgid "Prefixes and a fallback row"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:287
+#: eureka@shahriyar31.github.io/prefs.js:334
 msgid "Results"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:288
+#: eureka@shahriyar31.github.io/prefs.js:335
 msgid "Maximum rows"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:300
+#: eureka@shahriyar31.github.io/prefs.js:347
 msgid "About"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:302
+#: eureka@shahriyar31.github.io/prefs.js:349
 msgid ""
-"Spotlight-style search for GNOME. Your searches stay on this computer: Eureka "
-"does not use the network, does not log what you type, and never runs "
-"programs or scripts it finds."
+"Spotlight-style search for GNOME. Your searches stay on this computer: "
+"Eureka does not log what you type, never runs programs or scripts it finds, "
+"and only uses the network if you turn on the currency converter."
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:303
+#: eureka@shahriyar31.github.io/prefs.js:350
 msgid "Source code and issues"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:308
+#: eureka@shahriyar31.github.io/prefs.js:357
+msgid "Support Eureka"
+msgstr ""
+
+#: eureka@shahriyar31.github.io/prefs.js:358
+msgid ""
+"Eureka is free and stays free. If it saves you time, you can buy the "
+"developer a coffee."
+msgstr ""
+
+#: eureka@shahriyar31.github.io/prefs.js:365
 msgid "Reset all settings"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:308
+#: eureka@shahriyar31.github.io/prefs.js:365
 msgid "Back to the defaults"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/prefs.js:309
+#: eureka@shahriyar31.github.io/prefs.js:366
 msgid "Reset"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/providers/sources.js:61
+#: eureka@shahriyar31.github.io/providers/sources.js:64
 msgid "switch to window"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/providers/sources.js:61
+#: eureka@shahriyar31.github.io/providers/sources.js:64
 msgid "Switch to window"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/providers/sources.js:73
+#: eureka@shahriyar31.github.io/providers/sources.js:76
 #, javascript-format
 msgid "Enter copies %s"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/providers/sources.js:84
+#: eureka@shahriyar31.github.io/providers/sources.js:87
 msgid "Enter copies the result"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/providers/sources.js:92
+#: eureka@shahriyar31.github.io/providers/sources.js:95
 msgid "Lock Screen"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/providers/sources.js:94
+#: eureka@shahriyar31.github.io/providers/sources.js:97
 msgid "Suspend"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/providers/sources.js:98
+#: eureka@shahriyar31.github.io/providers/sources.js:101
 msgid "Log Out…"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/providers/sources.js:100
+#: eureka@shahriyar31.github.io/providers/sources.js:103
 msgid "Restart…"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/providers/sources.js:102
+#: eureka@shahriyar31.github.io/providers/sources.js:105
 msgid "Power Off…"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/providers/sources.js:111
+#: eureka@shahriyar31.github.io/providers/sources.js:114
 msgid "System action"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/providers/sources.js:143
+#: eureka@shahriyar31.github.io/providers/sources.js:146
 #, javascript-format
 msgid "Search %s for “%s”"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/providers/sources.js:144
+#: eureka@shahriyar31.github.io/providers/sources.js:147
 #, javascript-format
 msgid "prefix “%s”"
 msgstr ""
 
-#: eureka@shahriyar31.github.io/providers/sources.js:144
+#: eureka@shahriyar31.github.io/providers/sources.js:147
 #, javascript-format
 msgid "Tip: start with %s"
 msgstr ""
