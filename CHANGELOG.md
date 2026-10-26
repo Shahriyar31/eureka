@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.1 (2026-10-27)
+
+- Review fixes from GNOME's Shexli checker: clipboard use is declared (write-only, on Enter), the currency cache is
+  read and written in the background, all signals are disconnected explicitly, no `run_dispose()`.
+- No deprecated APIs (`orientation` instead of `vertical`), and patterns that confused code parsers are escaped.
+
 ## 1.1.0 (2026-10-27)
 
 - Folders in results, the one you used most recently first; they open in Files.

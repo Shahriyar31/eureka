@@ -8,7 +8,7 @@
   "url": "https://github.com/Shahriyar31/eureka",
   "settings-schema": "org.gnome.shell.extensions.eureka",
   "gettext-domain": "eureka",
-  "version-name": "1.1.0",
+  "version-name": "1.1.1",
   "donations": {
     "buymeacoffee": "shahriyarfarhan"
   }
