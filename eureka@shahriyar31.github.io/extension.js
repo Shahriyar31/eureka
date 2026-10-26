@@ -130,7 +130,7 @@ class EurekaPanel {
         });
 
         this._box = new St.BoxLayout({
-            style_class: `eureka${compact ? ' compact' : ''}`, vertical: true,
+            style_class: `eureka${compact ? ' compact' : ''}`, orientation: Clutter.Orientation.VERTICAL,
             style: `width: ${s.get_int('panel-width')}px; border-radius: ${radius}px; background-color: ${c.surface};` +
                 `${s.get_boolean('show-outline') ? `border: 1px solid ${c.outline};` : ''}` +
                 `box-shadow: 0 24px 64px ${c.shadow}; color: ${c.text};` +
@@ -161,10 +161,10 @@ class EurekaPanel {
         this._scroll = new St.ScrollView({style_class: 'eureka-scroll', overlay_scrollbars: true,
             hscrollbar_policy: St.PolicyType.NEVER, vscrollbar_policy: St.PolicyType.AUTOMATIC,
             style: `max-height: ${maxHeight}px;`});
-        this._list = new St.BoxLayout({style_class: 'eureka-list', vertical: true});
+        this._list = new St.BoxLayout({style_class: 'eureka-list', orientation: Clutter.Orientation.VERTICAL});
         this._scroll.add_child(this._list);
         this._box.add_child(this._scroll);
-        this._footer = new St.BoxLayout({vertical: true});
+        this._footer = new St.BoxLayout({orientation: Clutter.Orientation.VERTICAL});
         this._box.add_child(this._footer);
         this._backdrop.add_child(this._box);
         Main.layoutManager.uiGroup.add_child(this._backdrop);
@@ -433,7 +433,7 @@ class EurekaPanel {
         box.add_child(new St.Bin({style_class: useTonal ? 'eureka-icon tonal' : 'eureka-icon', child: icon,
             y_align: Clutter.ActorAlign.CENTER, style: useTonal ? `background-color: ${c.iconContainer};` : ''}));
 
-        const text = new St.BoxLayout({vertical: true, x_expand: true, y_align: Clutter.ActorAlign.CENTER});
+        const text = new St.BoxLayout({orientation: Clutter.Orientation.VERTICAL, x_expand: true, y_align: Clutter.ActorAlign.CENTER});
         const title = new St.Label({text: r.title, style_class: 'eureka-title'});
         title.clutter_text.ellipsize = 3;
         text.add_child(title);
