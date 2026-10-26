@@ -10,6 +10,7 @@ const CONSTANTS = {pi: Math.PI, e: Math.E};
 
 function tokenize(text) {
     const tokens = [];
+    // eslint-disable-next-line no-useless-escape -- the escaped / keeps code parsers (xgettext, Shexli) from misreading
     const re = /\s*(\d+(?:[.,]\d+)?(?:e[+-]?\d+)?|[a-z]+|\*\*|[-+*\/%^()×÷])/giy;
     let m;
     while (re.lastIndex < text.length) {
@@ -96,6 +97,7 @@ function parse(tokens) {
 /** Returns the result as text, or null when the query is not a calculation. */
 export function calculate(query) {
     const text = query.replace(/^=\s*/, '').trim();
+    // eslint-disable-next-line no-useless-escape -- the escaped / keeps code parsers (xgettext, Shexli) from misreading
     if (!/\d/.test(text) || !/[-+*\/%^()×÷]|[a-z]\(/i.test(text))
         return null;
     const tokens = tokenize(text);

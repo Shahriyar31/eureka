@@ -145,14 +145,18 @@ function shortcutGroup(window, settings) {
         syncConflicts();
     });
     // re-check after "Free it" (or a change in GNOME Settings) while this window is open
+    const watchers = [];
     for (const id of SYSTEM_SCHEMAS) {
         const schema = Gio.SettingsSchemaSource.get_default().lookup(id, true);
         if (schema) {
             const watched = new Gio.Settings({settings_schema: schema});
-            watched.connect('changed', syncConflicts);
-            window.connect('close-request', () => watched.run_dispose());
+            watchers.push([watched, watched.connect('changed', syncConflicts)]);
         }
     }
+    window.connect('close-request', () => {
+        watchers.splice(0).forEach(([watched, handler]) => watched.disconnect(handler));
+        return false;
+    });
     return group;
 }
 

@@ -16,6 +16,7 @@ You will get an answer within 7 days.
 | Execution | No shell. Only two fixed commands run: `localsearch`/`tracker3 search --files -- <words>` and `gnome-session-quit --logout/--reboot/--power-off`. The `--` stops search words from being read as options. | `providers/sources.js` |
 | Files | Programs, scripts, `.desktop` launchers, AppImages and executable files are revealed in Files, never opened. | `isRunnable()` in `providers/sources.js` |
 | Web | Engines must be `https://` URLs with exactly one `%s`. Search words are URL-encoded. | `isSafeEngine()` in `providers/sources.js`, `prefs.js` |
+| Clipboard | Never read. Written only when you press Enter on a calculator or converter result, or Alt+Enter on a file (its path). | `extension.js`, `providers/sources.js` |
 | Maths | A small parser, never `eval`. | `providers/calculator.js` |
 | Styling | Colours must be `#rrggbb`. Font names may only contain letters, digits, spaces, `-`, `_` and `.`. | `safeHex()`, `safeFont()` in `extension.js` |
 | Lock screen | Eureka is turned off while the screen is locked, so it can never appear on the lock screen. | `metadata.json` (no `session-modes`) |

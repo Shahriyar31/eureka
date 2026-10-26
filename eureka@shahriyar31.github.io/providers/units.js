@@ -47,6 +47,7 @@ function format(v) {
 
 /** Returns {text, value} for a conversion query, or null. */
 export function convert(query) {
+    // eslint-disable-next-line no-useless-escape -- the escaped / keeps code parsers (xgettext, Shexli) from misreading
     const m = query.trim().match(/^(-?\d+(?:[.,]\d+)?)\s*([a-z°²³\/]+)\s+(?:to|in|as|=)\s+([a-z°²³\/]+)$/i);
     if (!m)
         return null;

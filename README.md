@@ -110,6 +110,8 @@ Open **Extension Manager → Eureka → Settings** (or `gnome-extensions prefs e
   on, it fetches the European Central Bank's public rates file (2 KB) at most twice a day. What you type is never
   sent anywhere: the conversion happens on your computer. The web row opens your browser only when you choose it.
 - **Nothing is logged or stored.** What you type is never written to disk or to the system log.
+- **Clipboard: write-only, on request.** Eureka never reads your clipboard. It copies only when you press Enter on a
+  calculator or converter result, or <kbd>Alt</kbd>+<kbd>Enter</kbd> on a file.
 - **Never runs what it finds.** Programs, scripts and launchers found in file search open in Files, never start.
 - **No shell commands.** Eureka starts only GNOME's file-index search and GNOME's log-out dialog, with fixed arguments.
 - **Your search providers, your choice.** Like the Activities search, Eureka asks the GNOME apps enabled in

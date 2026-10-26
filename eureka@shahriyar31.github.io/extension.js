@@ -553,12 +553,13 @@ export default class EurekaExtension extends Extension {
         if (want && !this._icon) {
             this._icon = new PanelMenu.Button(0.5, 'Eureka', true);
             this._icon.add_child(new St.Icon({icon_name: 'system-search-symbolic', style_class: 'system-status-icon'}));
-            this._icon.connect('button-press-event', () => {
+            this._icon.connectObject('button-press-event', () => {
                 this._panel.toggle();
                 return Clutter.EVENT_STOP;
-            });
+            }, this);
             Main.panel.addToStatusArea(this.uuid, this._icon);
         } else if (!want && this._icon) {
+            this._icon.disconnectObject(this);
             this._icon.destroy();
             this._icon = null;
         }
@@ -566,6 +567,7 @@ export default class EurekaExtension extends Extension {
 
     disable() {
         this._settings.disconnectObject(this);
+        this._icon?.disconnectObject(this);
         this._icon?.destroy();
         this._icon = null;
         Main.wm.removeKeybinding('toggle');

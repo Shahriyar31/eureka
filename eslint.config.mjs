@@ -7,7 +7,7 @@ export default [
         languageOptions: {
             ecmaVersion: 2023,
             sourceType: 'module',
-            globals: {global: 'readonly', console: 'readonly', TextDecoder: 'readonly', log: 'readonly'},
+            globals: {global: 'readonly', console: 'readonly', TextDecoder: 'readonly', TextEncoder: 'readonly', log: 'readonly'},
         },
         rules: {
             'no-unused-vars': ['error', {argsIgnorePattern: '^_|^actor$|^event$|^c$|^o$|^p$'}],

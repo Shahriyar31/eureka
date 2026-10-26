@@ -28,15 +28,18 @@ export class Rates {
         return this._rates?.date ?? null;
     }
 
+    /** Reads the cached rates in the background (never blocks GNOME Shell on disk access). */
     _load() {
-        try {
-            const [, bytes] = GLib.file_get_contents(cacheFile());
-            const data = JSON.parse(new TextDecoder().decode(bytes));
-            if (Rates.valid(data))
-                this._rates = data;
-        } catch {
-            // no cache yet: the first refresh() fills it
-        }
+        Gio.File.new_for_path(cacheFile()).load_contents_async(this._cancellable, (file, res) => {
+            try {
+                const [, bytes] = file.load_contents_finish(res);
+                const data = JSON.parse(new TextDecoder().decode(bytes));
+                if (Rates.valid(data) && !this._rates)
+                    this._rates = data;
+            } catch {
+                // no cache yet (or cancelled): the first refresh() fills it
+            }
+        });
     }
 
     /** True when `data` has a date, a fetch time and at least 20 positive finite rates with ISO codes. */
@@ -75,7 +78,15 @@ export class Rates {
                     return;
                 this._rates = data;
                 GLib.mkdir_with_parents(GLib.path_get_dirname(cacheFile()), 0o700);
-                GLib.file_set_contents(cacheFile(), JSON.stringify(data));
+                Gio.File.new_for_path(cacheFile()).replace_contents_bytes_async(
+                    new GLib.Bytes(new TextEncoder().encode(JSON.stringify(data))), null, false,
+                    Gio.FileCreateFlags.PRIVATE | Gio.FileCreateFlags.REPLACE_DESTINATION, this._cancellable, (f, r) => {
+                        try {
+                            f.replace_contents_finish(r);
+                        } catch {
+                            // the cache is only a speed-up; the rates in memory still work
+                        }
+                    });
                 onUpdate?.();
             } catch {
                 // offline, cancelled or refused: keep the cached rates
