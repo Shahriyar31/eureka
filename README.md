@@ -72,14 +72,21 @@ Anything else gets a **Search the web** row at the bottom.
 | <kbd>Alt</kbd> + <kbd>Enter</kbd> | copy a file's path |
 | <kbd>Esc</kbd>, the shortcut again, the ✕ button, or a click outside | close |
 
+Every colour comes from one accent: your system's, or any colour you pick.
+
 <p align="center">
-  <img src="docs/light.png" width="420" alt="Light mode with a custom teal accent, converting 10 km to miles">
-  <img src="docs/emoji.png" width="420" alt="Finding the smile emoji through GNOME Characters">
+  <img src="docs/suggestions.png" width="420" alt="Blue accent: suggested apps before typing">
+  <img src="docs/dark.png" width="420" alt="Blue accent, searching for “lock”: Lock Screen is the top hit">
 </p>
 <p align="center">
-  <img src="docs/suggestions.png" width="420" alt="Suggested apps before typing">
-  <img src="docs/dark.png" width="420" alt="Dark mode, searching for “lock”: Lock Screen is the top hit">
+  <img src="docs/nord.png" width="420" alt="Nord frost accent (#88c0d0), searching for “lock”">
+  <img src="docs/catppuccin.png" width="420" alt="Catppuccin mauve accent (#cba6f7), finding the smile emoji">
 </p>
+<p align="center">
+  <img src="docs/light.png" width="420" alt="Light mode with a teal accent, converting 10 km to miles">
+  <img src="docs/emoji.png" width="420" alt="Blue accent, finding the smile emoji through GNOME Characters">
+</p>
+<p align="center"><sub>Blue · Nord <code>#88c0d0</code> · Catppuccin <code>#cba6f7</code> · light with teal <code>#1a7f72</code></sub></p>
 
 ## Make it yours
 
