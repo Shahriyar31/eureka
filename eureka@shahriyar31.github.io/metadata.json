@@ -1,0 +1,12 @@
+{
+  "uuid": "eureka@shahriyar31.github.io",
+  "name": "Eureka",
+  "description": "Spotlight-style search bar and app launcher for GNOME 50, like macOS Spotlight, Alfred or Raycast. Press Super+Space and type: apps, open windows, files, emoji, Settings pages, calculator, unit converter, lock/suspend/restart and web search, all in one box.\n\nMaterial You look that follows your accent colour, light or dark, with optional blur. Customise the theme, colour, shape, size, font, transparency, shortcuts, sources and web engines.\n\nPrivate and safe: no network access, nothing logged, and it never runs programs or scripts it finds. It uses its own window and does not modify the overview, so it cannot break GNOME's own search.",
+  "shell-version": [
+    "50"
+  ],
+  "url": "https://github.com/Shahriyar31/eureka",
+  "settings-schema": "org.gnome.shell.extensions.eureka",
+  "gettext-domain": "eureka",
+  "version-name": "1.0.0"
+}

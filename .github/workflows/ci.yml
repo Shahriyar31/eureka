@@ -1,0 +1,16 @@
+name: CI
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Lint (ESLint, including no-eval)
+        run: npm install --no-save eslint@9 @eslint/js@9 && npx eslint .
+      - name: Validate settings schema
+        run: sudo apt-get update && sudo apt-get install -y libglib2.0-bin && glib-compile-schemas --strict --dry-run eureka@shahriyar31.github.io/schemas
