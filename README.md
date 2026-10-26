@@ -1,3 +1,5 @@
+<p align="center"><img src="docs/icon.png" width="96" alt="Eureka icon: a magnifier with a spark"></p>
+
 <h1 align="center">Eureka</h1>
 
 <p align="center">
@@ -22,8 +24,8 @@ conversions, and searches the web, with a Material You look that follows your ac
 
 ## Install
 
-**Easiest: Extension Manager or extensions.gnome.org.** Open the *Extension Manager* app (or
-[extensions.gnome.org](https://extensions.gnome.org)), search for **Eureka**, click **Install**. Done.
+**Easiest: Extension Manager or extensions.gnome.org.** Open the *Extension Manager* app, search for **Eureka**,
+click **Install**. Or open [Eureka on extensions.gnome.org](https://extensions.gnome.org/extension/11499/eureka/).
 
 **From GitHub:** download `eureka@shahriyar31.github.io.shell-extension.zip` from the
 [latest release](https://github.com/Shahriyar31/eureka/releases/latest), then:
